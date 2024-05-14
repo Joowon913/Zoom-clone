@@ -16,15 +16,8 @@ const httpServer = http.createServer(app);
 const wsServer = SocketIO(httpServer);
 
 wsServer.on("connection", socket => {
-  socket.onAny((event) => {
-    console.log(`socket Event:${event}`);
-  });
-  socket.on("enter_room", (roomName, done) => {
-    socket.join(roomName);
-    done();
-    socket.to(roomName).emit("welcome");
-  });
-});
+  console.log(socket);
+})
 
 /* const sockets = [];
 
